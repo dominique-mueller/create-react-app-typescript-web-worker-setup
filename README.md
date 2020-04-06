@@ -10,18 +10,17 @@ Using **[Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Worke
 
 <br><br>
 
-## How to make Web Worker work in a TypeScript React app
+## How to make Web Workers work in a TypeScript React app
 
 ### 1. Install dependencies
 
 First of all, we need a few new dependencies. In particular:
 
 - We need **[react-app-rewired](https://github.com/timarney/react-app-rewired)** to hook into the Webpack configuration that `react-scripts`
-  uses under the hood - without the need to eject the config
-- We need the Webpack **[worker-loader](https://github.com/webpack-contrib/worker-loader)** so that we can integrate Web Worker into our
-  build process
+  uses under the hood (without having to eject the config)
+- We use the Webpack **[worker-loader](https://github.com/webpack-contrib/worker-loader)** to integrate Web Workers into our build process
 
-Add those dependencies to your `package.json` file and install them. For example:
+Add both dependencies to your `package.json` file and install them. For example:
 
 ```diff
   {
@@ -89,10 +88,10 @@ Finally, reference the `react-app-rewired.config.js` file in your `package.json`
 
 <br>
 
-### 3. Add worker
+### 3. Create and use a Web Worker
 
-Now you can start creating and using Web Workers. Two things are important here: Files that contain a Web Worker must end with `*.worker.ts`
-and start with the following two lines of code in order to work nicely together with TypeScript:
+Now you can start using Web Workers! Two things are important here: Files that contain a Web Worker must end with `*.worker.ts`, and they
+must start with the following two lines of code in order to work nicely together with TypeScript:
 
 ```ts
 declare const self: Worker;
