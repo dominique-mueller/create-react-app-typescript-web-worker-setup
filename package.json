@@ -1,0 +1,44 @@
+{
+  "name": "create-react-app-web-worker-experiment",
+  "version": "1.0.0",
+  "description": "Create React App - Web Worker Experiment",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dominique-mueller/create-react-app-web-worker-experiment"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --watchAll=false",
+    "test:watch": "react-scripts test"
+  },
+  "dependencies": {
+    "react": "16.13.x",
+    "react-dom": "16.13.x"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "4.2.x",
+    "@testing-library/react": "9.5.x",
+    "@testing-library/user-event": "10.0.x",
+    "@types/react": "16.9.x",
+    "@types/react-dom": "16.9.x",
+    "react-scripts": "3.4.x",
+    "typescript": "3.8.x"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

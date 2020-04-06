@@ -1,2 +1,9 @@
+<div align="center">
+
 # create-react-app-web-worker-experiment
-[EXPERIMENT] Using Web Workers in a React project
+
+Using Web Workers in a TypeScript React app, based on **[create-react-app](https://github.com/facebook/create-react-app)**.
+
+</div>
+
+<br><br>
