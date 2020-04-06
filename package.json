@@ -8,10 +8,11 @@
     "url": "https://github.com/dominique-mueller/create-react-app-web-worker-experiment"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false",
-    "test:watch": "react-scripts test"
+    "start": "react-app-rewired start",
+    "start:build": "lite-server --baseDir=\"build\"",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --watchAll=false",
+    "test:watch": "react-app-rewired test"
   },
   "dependencies": {
     "react": "16.13.x",
@@ -21,11 +22,19 @@
     "@testing-library/jest-dom": "4.2.x",
     "@testing-library/react": "9.5.x",
     "@testing-library/user-event": "10.0.x",
+    "@types/jest": "25.2.x",
+    "@types/node": "13.9.x",
     "@types/react": "16.9.x",
     "@types/react-dom": "16.9.x",
+    "lite-server": "2.5.x",
+    "react-app-rewired": "2.1.x",
     "react-scripts": "3.4.x",
-    "typescript": "3.8.x"
+    "ts-jest": "25.3.x",
+    "ts-node": "8.8.x",
+    "typescript": "3.8.x",
+    "worker-loader": "2.0.x"
   },
+  "config-overrides-path": "react-app-rewired.config.js",
   "eslintConfig": {
     "extends": "react-app"
   },

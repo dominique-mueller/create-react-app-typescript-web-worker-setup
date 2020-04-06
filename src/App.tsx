@@ -2,6 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import MyWorker from './MyWorker.worker';
+
+const myWorkerInstance: Worker = new MyWorker();
+console.log('MyWorker instance:', myWorkerInstance);
+myWorkerInstance.postMessage('This is a message from the main thread!');
+
 function App() {
   return (
     <div className="App">
