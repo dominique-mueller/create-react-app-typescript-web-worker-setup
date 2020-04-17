@@ -1,11 +1,11 @@
 {
-  "name": "create-react-app-web-worker-experiment",
+  "name": "react-web-worker-experiment",
   "version": "1.0.0",
-  "description": "Create React App - Web Worker Experiment",
+  "description": "Using Web Workers in a TypeScript React app, based on create-react-app",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/dominique-mueller/create-react-app-web-worker-experiment"
+    "url": "https://github.com/dominique-mueller/react-web-worker-experiment"
   },
   "scripts": {
     "start": "react-app-rewired start",

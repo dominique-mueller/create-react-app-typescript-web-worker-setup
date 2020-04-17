@@ -1,6 +1,6 @@
 <div align="center">
 
-# create-react-app-web-worker-experiment
+# react-web-worker-experiment
 
 Using **[Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)** in a
 **[TypeScript](https://github.com/microsoft/TypeScript)** **[React](https://github.com/facebook/react)** app, based on
