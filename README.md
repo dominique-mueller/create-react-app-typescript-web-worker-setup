@@ -8,9 +8,15 @@ Using **[Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Worke
 
 </div>
 
-<br><br>
+<br><br><br>
 
-## How to make Web Workers work in a TypeScript React app
+## How to use Web Workers in a TypeScript React app
+
+This project is an example React application that uses Web Workers. You can clone it and play around with it (see [Commands](#commands)).
+The following sub-chapters explain how to setup Web Worker support in a `create-react-app` project, and how to use Web Workers in your appm
+both in a vanilla approach and using **[Comlink](https://github.com/GoogleChromeLabs/comlink)**.
+
+<br>
 
 ### 1. Install dependencies
 
@@ -107,6 +113,56 @@ import MyWorker from './MyWorker.worker';
 
 const myWorkerInstance: Worker = new MyWorker();
 ```
+
+> Implementation pointers:
+>
+> - [Web Worker implementation](https://github.com/dominique-mueller/react-web-worker-experiment/blob/master/src/MyWorker.worker.ts)
+> - [Using the Web Worker](https://github.com/dominique-mueller/react-web-worker-experiment/blob/master/src/App.tsx#L9)
+
+<br>
+
+### Bonus: Using [Comlink](https://github.com/GoogleChromeLabs/comlink)
+
+Using Web Workers as is comes with the additional overhead of messaging between the main thread and the worker thread.
+**[Comlink](https://github.com/GoogleChromeLabs/comlink)** is a library by Googlers that simplifies the usage of Web Workers by turning
+the message-based communication into a "remote function execution"-like system.
+
+Within your React app, you can use Comlink just like you would expect. For example, expose your API within your worker:
+
+```ts
+import { expose } from 'comlink';
+
+// Define API
+const api = {
+  createMessage: (name: string): string => {
+    return `Hello ${name}!`;
+  },
+};
+
+// Expose API
+expose(api);
+```
+
+Then, from within you main thread, wrap the instantiated worker and use the worker API (asynchronously):
+
+```ts
+import { wrap } from 'comlink';
+import MyComlinkWorker from './MyComlinkWorker.worker';
+
+// Instantiate worker
+const myComlinkWorkerInstance: Worker = new MyComlinkWorker();
+const myComlinkWorkerApi = wrap(myComlinkWorkerInstance);
+
+// Call function in worker
+myComlinkWorkerApi.createMessage('John Doe').then((message: string) => {
+  console.log(message);
+});
+```
+
+> Implementation pointers:
+>
+> - [Web Worker implementation](https://github.com/dominique-mueller/react-web-worker-experiment/blob/master/src/MyComlinkWorker.worker.ts)
+> - [Using the Web Worker](https://github.com/dominique-mueller/react-web-worker-experiment/blob/master/src/App.tsx#L14)
 
 <br>
 
