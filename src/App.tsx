@@ -3,10 +3,21 @@ import logo from './logo.svg';
 import './App.css';
 
 import MyWorker from './MyWorker.worker';
+import MyComlinkWorker from './MyComlinkWorker.worker';
+import { wrap } from 'comlink';
 
+// Example: Using workers natively, e.g. by using "postMessage()"
 const myWorkerInstance: Worker = new MyWorker();
-console.log('MyWorker instance:', myWorkerInstance);
+console.log('[App] MyWorker instance:', myWorkerInstance);
 myWorkerInstance.postMessage('This is a message from the main thread!');
+
+// Example: Using workers via Comlink (comparable to remote execution)
+const myComlinkWorkerInstance: Worker = new MyComlinkWorker();
+const myComlinkWorkerApi: any = wrap(myComlinkWorkerInstance);
+console.log('[App] MyComlinkWorker instance:', myComlinkWorkerInstance);
+myComlinkWorkerApi.createMessage('John Doe').then((message: string): void => {
+  console.log('[App] MyComlinkWorker message:', message);
+});
 
 function App() {
   return (
