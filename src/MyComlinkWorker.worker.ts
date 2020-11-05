@@ -1,6 +1,5 @@
 import { expose } from 'comlink';
 
-declare const self: Worker;
 export default {} as typeof Worker & { new (): Worker };
 
 console.log('[MyComlinkWorker] Running.');

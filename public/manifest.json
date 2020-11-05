@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "create-react-app-typescript-web-worker-setup",
+  "name": "create-react-app-typescript-web-worker-setup",
   "icons": [
     {
       "src": "favicon.ico",

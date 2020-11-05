@@ -1,11 +1,11 @@
 {
   "name": "react-web-worker-experiment",
   "version": "1.0.0",
-  "description": "Using Web Workers in a TypeScript React app, based on create-react-app",
+  "description": "Using Web Workers in a TypeScript React project, based on create-react-app",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/dominique-mueller/react-web-worker-experiment"
+    "url": "https://github.com/dominique-mueller/create-react-app-typescript-web-worker-setup"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -16,24 +16,24 @@
   },
   "dependencies": {
     "comlink": "4.3.x",
-    "react": "16.13.x",
-    "react-dom": "16.13.x"
+    "react": "17.0.x",
+    "react-dom": "17.0.x"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "4.2.x",
-    "@testing-library/react": "9.5.x",
-    "@testing-library/user-event": "10.0.x",
-    "@types/jest": "25.2.x",
-    "@types/node": "13.9.x",
+    "@testing-library/jest-dom": "5.11.x",
+    "@testing-library/react": "11.1.x",
+    "@testing-library/user-event": "12.2.x",
+    "@types/jest": "26.0.x",
+    "@types/node": "14.14.x",
     "@types/react": "16.9.x",
     "@types/react-dom": "16.9.x",
     "lite-server": "2.5.x",
     "react-app-rewired": "2.1.x",
-    "react-scripts": "3.4.x",
-    "ts-jest": "25.3.x",
-    "ts-node": "8.8.x",
-    "typescript": "3.8.x",
-    "worker-loader": "2.0.x"
+    "react-scripts": "4.0.x",
+    "ts-jest": "26.4.x",
+    "ts-node": "9.0.x",
+    "typescript": "4.0.x",
+    "worker-loader": "3.0.x"
   },
   "config-overrides-path": "react-app-rewired.config.js",
   "eslintConfig": {

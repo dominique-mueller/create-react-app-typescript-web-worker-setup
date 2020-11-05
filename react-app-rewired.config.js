@@ -11,7 +11,7 @@ module.exports = {
         loader: 'worker-loader',
         options: {
           // Use directory structure & typical names of chunks produces by "react-scripts"
-          name: 'static/js/[id].worker.[contenthash:8].js',
+          filename: 'static/js/[id].worker.[contenthash:8].js',
         },
       },
     });
