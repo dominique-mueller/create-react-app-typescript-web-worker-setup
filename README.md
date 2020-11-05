@@ -32,7 +32,7 @@ Add both dependencies to your `package.json` file and install them. For example:
   {
     "devDependencies": {
 +     "react-app-rewired": "2.1.x",
-+     "worker-loader": "2.0.x"
++     "worker-loader": "3.0.x"
     }
   }
 ```
@@ -75,7 +75,7 @@ module.exports = {
         loader: 'worker-loader',
         options: {
           // Use directory structure & typical names of chunks produces by "react-scripts"
-          name: 'static/js/[id].worker.[contenthash:8].js',
+          filename: 'static/js/[name].[contenthash:8].js',
         },
       },
     });
@@ -131,6 +131,8 @@ Within your React app, you can use Comlink just like you would expect. For examp
 
 ```ts
 import { expose } from 'comlink';
+
+export default {} as typeof Worker & { new (): Worker };
 
 // Define API
 const api = {
