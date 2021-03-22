@@ -79,6 +79,7 @@ module.exports = {
         },
       },
     });
+
     return config;
   },
 };

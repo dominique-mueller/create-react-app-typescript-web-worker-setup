@@ -1,5 +1,5 @@
 {
-  "name": "react-web-worker-experiment",
+  "name": "create-react-app-typescript-web-worker-setup",
   "version": "1.0.0",
   "description": "Using Web Workers in a TypeScript React project, based on create-react-app",
   "private": true,
