@@ -3,7 +3,7 @@
 # create-react-app-typescript-web-worker-setup
 
 Using **[Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)** in a
-**[TypeScript](https://github.com/microsoft/TypeScript)** **[React](https://github.com/facebook/react)** project, based on
+**[TypeScript](https://github.com/microsoft/TypeScript)** **[React](https://github.com/facebook/react)** project based on
 **[create-react-app](https://github.com/facebook/create-react-app)**.
 
 </div>
@@ -12,9 +12,9 @@ Using **[Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Worke
 
 ## How to use Web Workers in a TypeScript React app
 
-This project is an example React application that uses Web Workers. You can clone it and play around with it (see [Commands](#commands)).
-The following sub-chapters explain how to setup Web Worker support in a `create-react-app` project, and how to use Web Workers in your appm
-both in a vanilla approach and using **[Comlink](https://github.com/GoogleChromeLabs/comlink)**.
+This project is an example React application that uses Web Workers. You can clone it and play around with it (see **[Commands](#commands)**).
+The following sub-chapters explain how to setup Web Worker support in a `create-react-app` project, and how to use Web Workers in your app -
+both vanilla and using **[Comlink](https://github.com/GoogleChromeLabs/comlink)**.
 
 <br>
 
