@@ -101,7 +101,7 @@ Now you can start using Web Workers! Two things are important here: Files that c
 must start with the following two lines of code in order to work nicely together with TypeScript:
 
 ```ts
-declare const self: Worker;
+declare const self: DedicatedWorkerGlobalScope;
 export default {} as typeof Worker & { new (): Worker };
 
 // Your code ...
