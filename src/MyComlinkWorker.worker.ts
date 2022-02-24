@@ -4,7 +4,7 @@ export default {} as typeof Worker & { new (): Worker };
 
 console.log('[MyComlinkWorker] Running.');
 
-const api = {
+export const api = {
   createMessage: (name: string): string => {
     return `Hello ${name}!`;
   },

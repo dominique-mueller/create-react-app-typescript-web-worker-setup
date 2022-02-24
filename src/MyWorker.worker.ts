@@ -1,4 +1,4 @@
-declare const self: Worker;
+declare const self: DedicatedWorkerGlobalScope;
 export default {} as typeof Worker & { new (): Worker };
 
 console.log('[MyWorker] Running.');

@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import MyWorker from './MyWorker.worker';
-import MyComlinkWorker from './MyComlinkWorker.worker';
+import MyComlinkWorker, { api } from './MyComlinkWorker.worker';
 import { wrap } from 'comlink';
 
 // Example: Using workers natively, e.g. by using "postMessage()"
@@ -13,7 +13,7 @@ myWorkerInstance.postMessage('This is a message from the main thread!');
 
 // Example: Using workers via Comlink (comparable to remote execution)
 const myComlinkWorkerInstance: Worker = new MyComlinkWorker();
-const myComlinkWorkerApi: any = wrap(myComlinkWorkerInstance);
+const myComlinkWorkerApi = wrap<typeof api>(myComlinkWorkerInstance);
 console.log('[App] MyComlinkWorker instance:', myComlinkWorkerInstance);
 myComlinkWorkerApi.createMessage('John Doe').then((message: string): void => {
   console.log('[App] MyComlinkWorker message:', message);
