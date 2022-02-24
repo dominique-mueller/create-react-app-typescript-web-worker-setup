@@ -101,7 +101,7 @@ Now you can start using Web Workers! Two things are important here: Files that c
 must start with the following two lines of code in order to work nicely together with TypeScript:
 
 ```ts
-declare const self: Worker;
+declare const self: DedicatedWorkerGlobalScope;
 export default {} as typeof Worker & { new (): Worker };
 
 // Your code ...
@@ -136,7 +136,7 @@ import { expose } from 'comlink';
 export default {} as typeof Worker & { new (): Worker };
 
 // Define API
-const api = {
+export const api = {
   createMessage: (name: string): string => {
     return `Hello ${name}!`;
   },
@@ -150,11 +150,11 @@ Then, from within you main thread, wrap the instantiated worker and use the work
 
 ```ts
 import { wrap } from 'comlink';
-import MyComlinkWorker from './MyComlinkWorker.worker';
+import MyComlinkWorker, { api } from './MyComlinkWorker.worker';
 
 // Instantiate worker
 const myComlinkWorkerInstance: Worker = new MyComlinkWorker();
-const myComlinkWorkerApi = wrap(myComlinkWorkerInstance);
+const myComlinkWorkerApi = wrap<typeof api>(myComlinkWorkerInstance);
 
 // Call function in worker
 myComlinkWorkerApi.createMessage('John Doe').then((message: string) => {
